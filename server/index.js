@@ -5,10 +5,9 @@ import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
-import kpiRoutes from "./routes/kpi.js";
 import KPI from "./models/KPI.js";
-import { kpis } from "./data/data.js";
-
+import kpiRoutes from "./routes/kpi.js";
+import { kpis, products, transactions } from "./data/data.js";
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
@@ -35,7 +34,7 @@ mongoose
   .then(async () => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    //this is very dangerous on production so Add this when needed
+    // // this is very dangerous on production so Add this when needed
     // await mongoose.connection.db.dropDatabase;
     // KPI.insertMany(kpis);
   })
