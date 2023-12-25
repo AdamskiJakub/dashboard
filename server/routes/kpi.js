@@ -20,6 +20,8 @@ export default router;
 
 // import KPI from "../models/KPI.js";
 
+//diffrent way
+
 // export default router;
 // const router = express.Router();
 
