@@ -4016,3 +4016,16 @@ export const transactions = [
     productIds: ["63bf7ac9f032394f5f002437"],
   },
 ];
+
+export const pieChartData = [
+  {
+    _id: "63bf7ccef03239eb9d0024ea",
+    name: "Group A",
+    targetSales: "86",
+  },
+  {
+    _id: "63bf7ccef03239eb9d0024ed",
+    name: "Group B",
+    targetSales: "98",
+  },
+];

@@ -1,19 +1,31 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { GetKpisResponse } from "./types";
+import {
+  GetKpisResponse,
+  GetProductsResponse,
+  GetPieChartResponse,
+} from "./types";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
   reducerPath: "main",
-  tagTypes: ["Kpis"],
+  tagTypes: ["Kpis", "Products", "PieChart"],
   endpoints: (build) => ({
     getKpis: build.query<Array<GetKpisResponse>, void>({
       query: () => "kpi/kpis/",
       providesTags: ["Kpis"],
     }),
+    getProducts: build.query<Array<GetProductsResponse>, void>({
+      query: () => "product/products/",
+      providesTags: ["Products"],
+    }),
+    getPie: build.query<Array<GetPieChartResponse>, void>({
+      query: () => "pie/pies/",
+      providesTags: ["PieChart"],
+    }),
   }),
 });
 
-export const { useGetKpisQuery } = api;
+export const { useGetKpisQuery, useGetProductsQuery, useGetPieQuery } = api;
 // SETTING UP REDUX
 // 1. we are importing createApi  and fetchBaseQuery from reduxjs
 // 2. later we write a function where is baseQuery with fetchbasequery and base url beeing import meta

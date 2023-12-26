@@ -55,3 +55,9 @@ export interface GetTransactionsResponse {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface GetPieChartResponse {
+  _id: string;
+  name: string;
+  targetSales: number;
+}
