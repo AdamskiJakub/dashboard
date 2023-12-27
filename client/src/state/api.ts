@@ -3,6 +3,7 @@ import {
   GetKpisResponse,
   GetProductsResponse,
   GetPieChartResponse,
+  GetTransactionsResponse,
 } from "./types";
 
 export const api = createApi({
@@ -22,10 +23,19 @@ export const api = createApi({
       query: () => "pie/pies/",
       providesTags: ["PieChart"],
     }),
+    getTransactions: build.query<Array<GetTransactionsResponse>, void>({
+      query: () => "transaction/transactions/",
+      providesTags: ["PieChart"],
+    }),
   }),
 });
 
-export const { useGetKpisQuery, useGetProductsQuery, useGetPieQuery } = api;
+export const {
+  useGetKpisQuery,
+  useGetProductsQuery,
+  useGetPieQuery,
+  useGetTransactionsQuery,
+} = api;
 // SETTING UP REDUX
 // 1. we are importing createApi  and fetchBaseQuery from reduxjs
 // 2. later we write a function where is baseQuery with fetchbasequery and base url beeing import meta

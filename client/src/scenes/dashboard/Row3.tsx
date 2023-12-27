@@ -1,8 +1,17 @@
 import DashboardBox from "@/components/DashboardBox";
+import {
+  useGetKpisQuery,
+  useGetProductsQuery,
+  useGetTransactionsQuery,
+} from "@/state/api";
 
-type Props = {};
+const Row3 = () => {
+  const { data: kpiData } = useGetKpisQuery();
+  const { data: productData } = useGetProductsQuery();
+  const { data: transactionData } = useGetTransactionsQuery();
 
-const Row3 = (props: Props) => {
+  console.log("transactionData:", transactionData);
+
   return (
     <>
       <DashboardBox gridArea="g"></DashboardBox>

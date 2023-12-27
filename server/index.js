@@ -8,8 +8,10 @@ import dotenv from "dotenv";
 import KPI from "./models/KPI.js";
 import kpiRoutes from "./routes/kpi.js";
 import productRoutes from "./routes/product.js";
+import transactionRoutes from "./routes/transaction.js";
 import pieRoutes from "./routes/pie.js";
 import Product from "./models/Product.js";
+import Transaction from "./models/Transaction.js";
 import { kpis, products, transactions, pieChartData } from "./data/data.js";
 import PieChart from "./models/PieChart.js";
 /* CONFIGURATION */
@@ -28,6 +30,7 @@ app.use(cors());
 app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
 app.use("/pie", pieRoutes);
+app.use("/transaction", transactionRoutes);
 
 /* MOONGOOSE SETUP */
 
@@ -45,6 +48,7 @@ mongoose
     // KPI.insertMany(kpis);
     // Product.insertMany(products);
     // PieChart.insertMany(pieChartData);
+    // Transaction.insertMany(transactions);
   })
   .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
