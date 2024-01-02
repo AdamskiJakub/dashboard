@@ -233,7 +233,7 @@ const Row2 = () => {
             />
             <ZAxis type="number" range={[20]} />
             {/* formatter={(v) => `${v}`} this means we need to format it on format we want to grab current value and pass it */}
-            <Tooltip formatter={(v) => `$${v}`} />{" "}
+            <Tooltip formatter={(v) => `$${v}`} />
             <Scatter
               name="Product Expense Ratio"
               data={productExpenseData}
