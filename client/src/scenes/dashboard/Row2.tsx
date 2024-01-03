@@ -59,7 +59,7 @@ const Row2 = () => {
         };
       })
     );
-  }, [operationalData]);
+  }, [productData]);
 
   const pieData = useMemo(() => {
     if (!pieChartData) {
