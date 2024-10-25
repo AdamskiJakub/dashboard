@@ -185,9 +185,7 @@ const Row2 = () => {
                   </Typography>
                 );
               })}
-            <Typography variant="h6">
-              Finance goals of the campaign that is desired
-            </Typography>
+            <Typography variant="h6">Finance goals of the campaign</Typography>
           </Box>
           <Box flexBasis="40%">
             <Typography variant="h5">Losses in Revenue</Typography>
